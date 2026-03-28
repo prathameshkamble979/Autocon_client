@@ -8,67 +8,61 @@ import EnquiryModal from '../components/EnquiryModal';
 
 // Map of subcategory slug -> display info
 const SUBCATEGORY_INFO = {
-    'belt-conveyor': {
+    'belt-conveyors': {
         name: 'Belt Conveyor',
         desc: 'We manufacture a complete range of belt conveyors for flat transport, inclined elevation, and cleated product retention across all industries.',
         image: '/images/hero_conveyor_1773902700148.png',
         dbName: 'Belt Conveyor',
     },
-    'roller-conveyor': {
+    'roller-conveyors': {
         name: 'Roller Conveyor',
         desc: 'Gravity and motorized roller conveyors designed for efficient product handling in warehouses, distribution centers, and manufacturing plants.',
         image: '/images/hero_conveyor_1773902700148.png',
         dbName: 'Roller Conveyor',
     },
-    'chain-conveyor': {
+    'chain-conveyors': {
         name: 'Chain Conveyor',
         desc: 'Heavy-duty chain drive conveyors engineered to move heavy pallets, automotive components, and large industrial workpieces reliably.',
         image: '/images/hero_conveyor_1773902700148.png',
         dbName: 'Chain Conveyor',
     },
-    'slat-conveyor': {
+    'slat-conveyors': {
         name: 'Slat Conveyor',
         desc: 'Rigid steel or aluminum slat conveyors for transporting heavy, hot, or abrasive materials across production facilities.',
         image: '/images/hero_conveyor_1773902700148.png',
         dbName: 'Slat Conveyor',
     },
-    'modular-belt-conveyor': {
+    'modular-conveyors': {
         name: 'Modular Belt Conveyor',
         desc: 'FDA-compliant modular plastic belt conveyors for food processing, pharmaceutical, and packaging applications requiring easy cleaning.',
         image: '/images/hero_conveyor_1773902700148.png',
         dbName: 'Modular Belt Conveyor',
     },
-    'spiral-conveyor': {
+    'spiral-conveyors': {
         name: 'Spiral Conveyor',
         desc: 'Space-efficient vertical spiral conveyors for elevating or lowering products between floors without large horizontal footprints.',
         image: '/images/hero_conveyor_1773902700148.png',
         dbName: 'Spiral Conveyor',
     },
-    'wiremesh-conveyor': {
+    'wiremesh-conveyors': {
         name: 'Wiremesh Conveyor',
         desc: 'Open stainless-steel wire mesh belt conveyors for cooling tunnels, baking ovens, drying chambers, and heat treatment processes.',
         image: '/images/hero_conveyor_1773902700148.png',
         dbName: 'Wiremesh Conveyor',
     },
-    'truck-loading-conveyor': {
-        name: 'Truck Loading Conveyor',
-        desc: 'Mobile and fixed truck loading conveyor systems enabling safe, fast, and ergonomic loading into containers and trailers.',
-        image: '/images/hero_conveyor_1773902700148.png',
-        dbName: 'Truck Loading Conveyor',
-    },
-    'telescopic-conveyor': {
+    'telescopic-conveyors': {
         name: 'Telescopic Conveyor',
         desc: 'Extendable telescopic belt conveyors that retract and extend for variable-depth reach into truck bays and storage areas.',
         image: '/images/hero_conveyor_1773902700148.png',
         dbName: 'Telescopic Conveyor',
     },
-    'flexible-conveyor': {
+    'flexible-conveyors': {
         name: 'Flexible Conveyor',
         desc: 'Laterally flexible conveyors that bend around obstacles and change direction to adapt to any floor layout without fixed infrastructure.',
         image: '/images/hero_conveyor_1773902700148.png',
         dbName: 'Flexible Conveyor',
     },
-    'screw-conveyor': {
+    'screw-conveyors': {
         name: 'Screw Conveyor',
         desc: 'Horizontal, inclined, and vertical screw conveyors for enclosed transport of bulk powders, grains, granules, and paste materials.',
         image: '/images/hero_conveyor_1773902700148.png',
@@ -78,21 +72,21 @@ const SUBCATEGORY_INFO = {
 
 // Demo products to show when DB has no entries yet
 const DEMO_PRODUCTS = {
-    'belt-conveyor': [
+    'belt-conveyors': [
         { _id: 'd1', slug: 'flat-belt-conveyor', name: 'Flat Belt Conveyor', subcategory: 'Belt Conveyor', shortDesc: 'Standard flat belt conveyor for horizontal material transport. Available in widths from 300mm to 1500mm with customizable lengths.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
         { _id: 'd2', slug: 'inclined-belt-conveyor', name: 'Inclined Belt Conveyor', subcategory: 'Belt Conveyor', shortDesc: 'Steep angle inclined belt conveyor for elevating materials. Angles from 15° to 45° with return idlers and snub pulleys.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
         { _id: 'd3', slug: 'cleated-belt-conveyor', name: 'Cleated Belt Conveyor', subcategory: 'Belt Conveyor', shortDesc: 'Belt conveyor with transverse cleats preventing product rollback on steep inclines. Ideal for granular and lumpy materials.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
         { _id: 'd4', slug: 'heavy-duty-belt-conveyor', name: 'Heavy Duty Belt Conveyor', subcategory: 'Belt Conveyor', shortDesc: 'Reinforced frame belt conveyor for loads up to 2000 kg/m. Built for quarries, mining, and heavy industrial applications.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
     ],
-    'roller-conveyor': [
+    'roller-conveyors': [
         { _id: 'd5', slug: 'gravity-roller-conveyor', name: 'Gravity Roller Conveyor', subcategory: 'Roller Conveyor', shortDesc: 'Non-powered roller conveyor using gravity for natural product flow. Cost-effective solution for warehouses and distribution centers.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
         { _id: 'd6', slug: 'powered-roller-conveyor', name: 'Powered Roller Conveyor', subcategory: 'Roller Conveyor', shortDesc: 'Motor-driven roller conveyor with speed control for precise product movement in assembly and packaging lines.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
     ],
-    'chain-conveyor': [
+    'chain-conveyors': [
         { _id: 'd7', slug: 'heavy-duty-chain-conveyor', name: 'Heavy Duty Chain Conveyor', subcategory: 'Chain Conveyor', shortDesc: 'Robust dual-strand chain conveyor for moving heavy loads and pallets in manufacturing and assembly facilities.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
         { _id: 'd8', slug: 'pallet-chain-conveyor', name: 'Pallet Chain Conveyor', subcategory: 'Chain Conveyor', shortDesc: 'Precision pallet conveyor system with accumulation and transfer capabilities for automated assembly lines.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
     ],
-    'screw-conveyor': [
+    'screw-conveyors': [
         { _id: 'd9', slug: 'horizontal-screw-conveyor', name: 'Horizontal Screw Conveyor', subcategory: 'Screw Conveyor', shortDesc: 'Horizontal helical screw conveyor for bulk material transfer in food, chemical, and agricultural industries.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
         { _id: 'd10', slug: 'inclined-screw-conveyor', name: 'Inclined Screw Conveyor', subcategory: 'Screw Conveyor', shortDesc: 'Inclined tube screw conveyor for elevating powders and granules at angles up to 45 degrees.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
     ],
