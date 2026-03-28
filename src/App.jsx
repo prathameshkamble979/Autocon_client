@@ -22,6 +22,7 @@ import ProductDetails from './pages/ProductDetails';
 import Services from './pages/Services';
 import CaseStudies from './pages/CaseStudies';
 import CaseStudyDetails from './pages/CaseStudyDetails';
+import ProjectsPublic from './pages/Projects';
 import Login from './pages/admin/Login';
 import Dashboard from './pages/admin/Dashboard';
 import Products from './pages/admin/Products';
@@ -93,6 +94,11 @@ const LayoutWrapper = () => {
               </PageTransition>
             } />
             <Route path="/projects" element={
+              <PageTransition>
+                <ProjectsPublic />
+              </PageTransition>
+            } />
+            <Route path="/case-studies" element={
               <PageTransition>
                 <CaseStudies />
               </PageTransition>
