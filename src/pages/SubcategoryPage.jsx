@@ -70,7 +70,7 @@ const SUBCATEGORY_INFO = {
     },
 };
 
-// Demo products to show when DB has no entries yet
+// Demo products to show when DB has no entries yet (or to pad real DB entries)
 const DEMO_PRODUCTS = {
     'belt-conveyors': [
         { _id: 'd1', slug: 'flat-belt-conveyor', name: 'Flat Belt Conveyor', subcategory: 'Belt Conveyor', shortDesc: 'Standard flat belt conveyor for horizontal material transport. Available in widths from 300mm to 1500mm with customizable lengths.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
@@ -81,16 +81,44 @@ const DEMO_PRODUCTS = {
     'roller-conveyors': [
         { _id: 'd5', slug: 'gravity-roller-conveyor', name: 'Gravity Roller Conveyor', subcategory: 'Roller Conveyor', shortDesc: 'Non-powered roller conveyor using gravity for natural product flow. Cost-effective solution for warehouses and distribution centers.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
         { _id: 'd6', slug: 'powered-roller-conveyor', name: 'Powered Roller Conveyor', subcategory: 'Roller Conveyor', shortDesc: 'Motor-driven roller conveyor with speed control for precise product movement in assembly and packaging lines.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
+        { _id: 'd6b', slug: 'accumulation-roller-conveyor', name: 'Accumulation Roller Conveyor', subcategory: 'Roller Conveyor', shortDesc: 'Zero-pressure accumulation conveyor that keeps products queued without back-pressure damage. Ideal for fragile items.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
     ],
     'chain-conveyors': [
         { _id: 'd7', slug: 'heavy-duty-chain-conveyor', name: 'Heavy Duty Chain Conveyor', subcategory: 'Chain Conveyor', shortDesc: 'Robust dual-strand chain conveyor for moving heavy loads and pallets in manufacturing and assembly facilities.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
-        { _id: 'd8', slug: 'pallet-chain-conveyor', name: 'Pallet Chain Conveyor', subcategory: 'Chain Conveyor', shortDesc: 'Precision pallet conveyor system with accumulation and transfer capabilities for automated assembly lines.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
+        { _id: 'd8', slug: 'drag-chain-conveyor', name: 'Drag Chain Conveyor', subcategory: 'Chain Conveyor', shortDesc: 'Rugged en-masse chain conveyor for handling hot, abrasive, or heavy bulk materials at temperatures up to 400°C.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
+        { _id: 'd8b', slug: 'pallet-chain-conveyor', name: 'Pallet Chain Conveyor', subcategory: 'Chain Conveyor', shortDesc: 'Precision pallet conveyor system with accumulation and transfer capabilities for automated assembly lines.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
+    ],
+    'slat-conveyors': [
+        { _id: 'd9a', slug: 'steel-slat-conveyor', name: 'Steel Slat Conveyor', subcategory: 'Slat Conveyor', shortDesc: 'Heavy-duty steel slat conveyor for high-temperature or abrasive materials. Used in foundries, paint shops, and automotive lines.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
+        { _id: 'd9b', slug: 'aluminum-slat-conveyor', name: 'Aluminium Slat Conveyor', subcategory: 'Slat Conveyor', shortDesc: 'Lightweight aluminium slat conveyor ideal for assembly lines, electronics, and light manufacturing applications.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
+    ],
+    'modular-conveyors': [
+        { _id: 'd10a', slug: 'flat-top-modular-conveyor', name: 'Flat Top Modular Belt Conveyor', subcategory: 'Modular Belt Conveyor', shortDesc: 'FDA-grade modular plastic belt conveyor for food processing and packaging. Easy to clean and sanitize between batches.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
+        { _id: 'd10b', slug: 'raised-rib-modular-conveyor', name: 'Raised-Rib Modular Conveyor', subcategory: 'Modular Belt Conveyor', shortDesc: 'Modular belt with raised ribs for inclined transport of bottles, cans, and small consumer products without rollback.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
+    ],
+    'spiral-conveyors': [
+        { _id: 'd11a', slug: 'spiral-belt-conveyor', name: 'Spiral Belt Conveyor', subcategory: 'Spiral Conveyor', shortDesc: 'Compact vertical spiral conveyor that elevates products between floors within a very small footprint.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
+        { _id: 'd11b', slug: 'spiral-cooling-conveyor', name: 'Spiral Cooling Conveyor', subcategory: 'Spiral Conveyor', shortDesc: 'Spiral conveyor with integrated airflow for cooling baked goods, chocolates, or cooked products before packaging.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
+    ],
+    'wiremesh-conveyors': [
+        { _id: 'd12a', slug: 'ss-wiremesh-conveyor', name: 'SS Wire Mesh Conveyor', subcategory: 'Wiremesh Conveyor', shortDesc: 'Stainless-steel wire mesh belt conveyor for baking ovens, cooling tunnels, and drying chambers up to 300°C.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
+        { _id: 'd12b', slug: 'balanced-weave-wiremesh', name: 'Balanced Weave Wiremesh Conveyor', subcategory: 'Wiremesh Conveyor', shortDesc: 'Balanced weave open mesh belt for heat treatment, annealing, and tempering furnace applications.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
+    ],
+    'telescopic-conveyors': [
+        { _id: 'd13a', slug: 'telescopic-belt-conveyor', name: 'Telescopic Belt Conveyor', subcategory: 'Telescopic Conveyor', shortDesc: 'Extendable belt conveyor that reaches deep into truck bays for fast loading and unloading without manual handling.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
+        { _id: 'd13b', slug: 'powered-telescopic-conveyor', name: 'Powered Telescopic Conveyor', subcategory: 'Telescopic Conveyor', shortDesc: 'Motorised telescopic conveyor with powered extension for heavy parcel and carton handling in logistics hubs.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
+    ],
+    'flexible-conveyors': [
+        { _id: 'd14a', slug: 'flexible-snake-conveyor', name: 'Flexible Snake Conveyor', subcategory: 'Flexible Conveyor', shortDesc: 'Laterally flexible roller conveyor that bends around obstacles and adapts to any floor layout on the fly.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
+        { _id: 'd14b', slug: 'extendable-flexible-conveyor', name: 'Extendable Flexible Belt Conveyor', subcategory: 'Flexible Conveyor', shortDesc: 'Accordion-style belt conveyor that extends and flexes for efficient loading dock and baggage handling operations.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
     ],
     'screw-conveyors': [
-        { _id: 'd9', slug: 'horizontal-screw-conveyor', name: 'Horizontal Screw Conveyor', subcategory: 'Screw Conveyor', shortDesc: 'Horizontal helical screw conveyor for bulk material transfer in food, chemical, and agricultural industries.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
-        { _id: 'd10', slug: 'inclined-screw-conveyor', name: 'Inclined Screw Conveyor', subcategory: 'Screw Conveyor', shortDesc: 'Inclined tube screw conveyor for elevating powders and granules at angles up to 45 degrees.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
+        { _id: 'd15', slug: 'horizontal-screw-conveyor', name: 'Horizontal Screw Conveyor', subcategory: 'Screw Conveyor', shortDesc: 'Horizontal helical screw conveyor for bulk material transfer in food, chemical, and agricultural industries.', image: '/images/hero_conveyor_1773902700148.png', featured: true },
+        { _id: 'd16', slug: 'inclined-screw-conveyor', name: 'Inclined Screw Conveyor', subcategory: 'Screw Conveyor', shortDesc: 'Inclined tube screw conveyor for elevating powders and granules at angles up to 45 degrees.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
+        { _id: 'd16b', slug: 'vertical-screw-conveyor', name: 'Vertical Screw Conveyor', subcategory: 'Screw Conveyor', shortDesc: 'High-speed vertical screw conveyor for moving bulk powders and grains straight up to overhead hoppers or silos.', image: '/images/hero_conveyor_1773902700148.png', featured: false },
     ],
 };
+
 
 const cardVariants = {
     hidden: { opacity: 0, y: 25 },
@@ -122,14 +150,34 @@ const SubcategoryPage = () => {
     const fetchProducts = async () => {
         setLoading(true);
         try {
-            const { data } = await api.get(`/products?subcategory=${encodeURIComponent(info.dbName)}`);
-            if (data && data.length > 0) {
-                setProducts(data);
-            } else {
-                // Fallback to demo data for this subcategory
-                setProducts(DEMO_PRODUCTS[subcategory] || []);
+            const fetchPromise = api.get(`/products?subcategory=${encodeURIComponent(info.dbName)}`);
+            const timeoutPromise = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('timeout')), 5000)
+            );
+            const res = await Promise.race([fetchPromise, timeoutPromise]);
+            
+            // Extract array safely regardless of whether the interceptor executed
+            let dbItems = [];
+            if (res && res.data) {
+                if (Array.isArray(res.data)) {
+                    dbItems = res.data;
+                } else if (Array.isArray(res.data.data)) {
+                    dbItems = res.data.data;
+                }
             }
+
+            // Merge: DB products come first, then fill in demo products the DB is missing
+            const demoFallback = DEMO_PRODUCTS[subcategory] || [];
+            
+            // Merge and deduplicate by name (case-insensitive)
+            const dbNames = new Set(dbItems.map(p => (p.name || '').toLowerCase()));
+            const extraDemo = demoFallback.filter(p => !dbNames.has((p.name || '').toLowerCase()));
+            
+            const merged = [...dbItems, ...extraDemo];
+            setProducts(merged.length > 0 ? merged : demoFallback);
         } catch (err) {
+            console.error("Error fetching subcategory products", err);
+            // On timeout or network error fall back to demo immediately
             setProducts(DEMO_PRODUCTS[subcategory] || []);
         } finally {
             setLoading(false);
@@ -197,7 +245,12 @@ const SubcategoryPage = () => {
                 {/* Search + info bar */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
                     <p className="text-slate-600">
-                        <span className="font-bold text-slate-900">{filtered.length}</span> products in {info.name}
+                        {loading ? (
+                            <span className="animate-pulse bg-slate-200 text-transparent rounded px-2">Loading</span>
+                        ) : (
+                            <span className="font-bold text-slate-900">{filtered.length}</span>
+                        )}
+                        {' '}products in {info.name}
                     </p>
                     <div className="relative w-full sm:w-72">
                         <input
