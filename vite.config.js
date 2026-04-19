@@ -7,7 +7,7 @@ export default defineConfig({
   define: {
     // By default, Vite doesn't include shims for NodeJS/
     // necessary for styled-components + some other libs
-    global: {},
+    global: 'window',
   },
   resolve: {
     alias: {
